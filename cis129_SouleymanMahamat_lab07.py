@@ -70,17 +70,20 @@ def getTickets(section):
     tickets = int(tickets)
     return tickets
 
-# for each section, get number of tickets from user, display total so far,
-# and store section subtotals in a list
+# for each section, get number of tickets from user, display totals so far,
+# and store section subtotals in a lists
 subtotals = []
+seat_subtotals = []
 for section in sections:
-    subtotals.append(getTickets(section) * section[2])
-    print(f'Total so far: ${sum(subtotals)}')
+    tickets = getTickets(section)
+    subtotals.append(tickets * section[2])
+    seat_subtotals.append(tickets)
+    print(f'Totals so far: ${sum(subtotals)}, {sum(seat_subtotals)} {"seat" if sum(seat_subtotals) == 1 else "seats"}')
 
-print()
+print('\n')
 
 # for each section display subtotal
 for i in range(len(sections)):
-    print(f'Section {sections[i][0]} subtotal: ${subtotals[i]}')
+    print(f'Section {sections[i][0]} subtotal: ${subtotals[i]}, {seat_subtotals[i]} {"seat" if seat_subtotals[i] == 1 else "seats"}')
     
-print(f'\nGrand Total: ${sum(subtotals)}')
+print(f'\nGrand Total: ${sum(subtotals)}, {sum(seat_subtotals)} {"seat" if sum(seat_subtotals) == 1 else "seats"}')
