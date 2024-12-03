@@ -1,3 +1,10 @@
+'''
+Souleyman Mahamat
+cis-129
+
+This script creates a an object class Pet as defined below, asks for relevant input,
+and displays it.
+'''
 
 # Class definition for Pet
 class Pet:
@@ -30,7 +37,7 @@ class Pet:
 
 # Main program to create and use a Pet object
 def main():
-    # Declare input variables
+    # Declare input variables, test input validity
     
     inputName = input("Enter a pet name: ")
     while not inputName.isalpha():
