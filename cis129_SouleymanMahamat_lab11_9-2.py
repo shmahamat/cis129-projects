@@ -13,6 +13,7 @@ def read_and_analyze_grades():
             # Process each line, removing extra whitespace and calculating totals
             for line in lines:
                 grade = line.strip()  # Remove any extra whitespace or newlines
+                
                 if grade:  # Ensure the line is not empty
                     grade = float(grade)
                     grades.append(grade)  # Add grade to list
@@ -27,6 +28,7 @@ def read_and_analyze_grades():
 
         # Display the results
         print("Grades in the file:")
+
         for grade in grades:
             print(grade)
 
